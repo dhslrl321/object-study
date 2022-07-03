@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.application.YieldRateCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-02T04:24:30" hostname="trevariui-MacBookPro-3.local" time="0.288">
+  <properties/>
+  <testcase name="name()" classname="com.example.application.YieldRateCalculatorTest" time="0.288"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
