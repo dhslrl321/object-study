@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.domain.lottery.LotteriesFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-10T07:18:41" hostname="trevariui-MacBookPro-3.local" time="0.026">
+  <properties/>
+  <testcase name="name()" classname="com.example.domain.lottery.LotteriesFactoryTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

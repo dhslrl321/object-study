@@ -3,15 +3,21 @@ package com.example.util;
 import com.example.domain.lottery.Numbers;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class RandomNumberGenerator {
+public class RandomNumberGenerator implements NumberGenerator{
 
     private static final int END_EXCLUSIVE = 45;
-    private static final int START_EXCLUSIVE = 1;
+    private static final int START_INCLUSIVE = 1;
+    private final ThreadLocalRandom random;
+    private final int length;
 
-    private final ThreadLocalRandom random = ThreadLocalRandom.current();
+    public RandomNumberGenerator(int length) {
+        this.length = length;
+        random = ThreadLocalRandom.current();
+    }
 
-    public Numbers generate(int count) {
-        int[] integers = getIntegers(count);
+    @Override
+    public Numbers generate() {
+        int[] integers = getIntegers(length);
         return Numbers.createWithSort(integers);
     }
 
@@ -25,6 +31,7 @@ public class RandomNumberGenerator {
     }
 
     private int getRandomNumber() {
-        return random.nextInt(END_EXCLUSIVE) + START_EXCLUSIVE;
+        return random.nextInt(END_EXCLUSIVE) + START_INCLUSIVE;
     }
+
 }

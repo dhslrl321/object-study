@@ -1,6 +1,7 @@
 package com.example.domain.lottery;
 
 import com.example.domain.value.Price;
+import com.example.util.NumberGenerator;
 import com.example.util.RandomNumberGenerator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,12 +11,12 @@ public class LotteriesFactory {
 
     private final int lotteryNumberCount;
     private final Price unitPrice;
-    private final RandomNumberGenerator generator;
+    private final NumberGenerator numberGenerator;
 
-    public LotteriesFactory(int lotteryNumberCount, Price unitPrice, RandomNumberGenerator generator) {
+    public LotteriesFactory(int lotteryNumberCount, Price unitPrice, NumberGenerator numberGenerator) {
         this.lotteryNumberCount = lotteryNumberCount;
         this.unitPrice = unitPrice;
-        this.generator = generator;
+        this.numberGenerator = numberGenerator;
     }
 
     public Lotteries createBy(Price price) {
@@ -28,7 +29,7 @@ public class LotteriesFactory {
     }
 
     private Lottery generateLottery() {
-        return Lottery.from(generator.generate(lotteryNumberCount));
+        return Lottery.from(numberGenerator.generate());
     }
 
     private int getLotteryCount(Price provided) {

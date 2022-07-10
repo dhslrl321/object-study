@@ -12,13 +12,19 @@ import com.example.domain.lottery.WinningNumberFactory;
 import com.example.domain.value.Price;
 import com.example.util.ConsoleReader;
 import com.example.util.ConsoleWriter;
+import com.example.util.ManualNumberGenerator;
 import com.example.util.RandomNumberGenerator;
 import java.util.LinkedList;
 
 public class Application {
 
     private static final WinningNumberFactory winningNumberFactory = new WinningNumberFactory();
-    private static final LotteriesFactory lotteriesFactory = new LotteriesFactory(6, Price.of(1000), new RandomNumberGenerator());
+
+    private static final LotteriesFactory lotteriesFactory = new LotteriesFactory(
+            6, Price.of(1000), new RandomNumberGenerator(6));
+
+    private static final LotteriesFactory manualLotteriesFactory = new LotteriesFactory(
+            6, Price.of(1000), new ManualNumberGenerator());
 
     public static void main(String[] args) {
         ConsoleReader reader = new ConsoleReader();
